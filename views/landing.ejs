@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Twitter Sentiment Analysis</title>
+	<link href="https://fonts.googleapis.com/css?family=Bitter:400,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+	<style type="text/css">
+		body {
+			background: #141E30; 
+			background: -webkit-linear-gradient(to right, #243B55, #141E30);  
+			background: linear-gradient(to right, #243B55, #141E30); 
+			font-family: "Bitter";
+
+		}
+
+		h1 {
+			color: white;
+			font-weight: bold;
+			font-size: 3em;
+		}
+		hr.style-seven {
+		    overflow: visible;
+		    height: 30px;
+		    border-style: solid;
+		    border-color: white;
+		    border-width: 1px 0 0 0;
+		    border-radius: 20px;
+		}
+		hr.style-seven:before { 
+		    display: block;
+		    content: "";
+		    height: 30px;
+		    margin-top: -31px;
+		    border-style: solid;
+		    border-color: white;
+		    border-width: 0 0 1px 0;
+		    border-radius: 20px;
+		}
+		label {
+			color: white;
+			font-size: 1.5em;
+		}
+
+		form {
+			width: 50%;
+			border: 10px solid white;
+			padding: 3%;
+			border-radius: 4%;
+		}
+	</style>
+</head>
+<body>
+	<center>
+	<h1>Twitter Sentiment Analysis</h1>
+	<hr class="style-seven">
+	<form action="/analyze" method="GET">
+	  	<div class="form-group">
+		    <label id="label">What would you like to analyze?</label>
+		    <input type="text" class="form-control" name="phrase" placeholder="Enter phrase">
+		</div>
+		<button type="submit" class="btn btn-danger btn-lg">Analyze!</button>
+	</form>
+	</center>
+</body>
+</html>

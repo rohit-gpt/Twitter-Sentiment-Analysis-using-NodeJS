@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="refresh" content="5; URL=http://<%= host %>/">
+	<title>Twitter Sentiment Analysis::Results</title>
+	<link href="https://fonts.googleapis.com/css?family=Bitter:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:400" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+	<style type="text/css">
+		body {
+			background: #141E30; 
+			background: -webkit-linear-gradient(to right, #243B55, #141E30);  
+			background: linear-gradient(to right, #243B55, #141E30); 
+			font-family: "Bitter";
+			color: white;
+		}
+
+		h1 {
+			font-weight: bold;
+			font-size: 3em;
+		}
+		hr.style-seven {
+		    overflow: visible;
+		    height: 30px;
+		    border-style: solid;
+		    border-color: white;
+		    border-width: 1px 0 0 0;
+		    border-radius: 20px;
+		}
+		hr.style-seven:before { 
+		    display: block;
+		    content: "";
+		    height: 30px;
+		    margin-top: -31px;
+		    border-style: solid;
+		    border-color: white;
+		    border-width: 0 0 1px 0;
+		    border-radius: 20px;
+		}
+
+		#phrase {
+			font-family: "Quicksand";
+			font-size: 4em;
+		}
+
+		#score {
+			margin-top: 20%;
+			height: 50%;
+			width: 35%;
+			background-color: white;
+			border: 9px solid black;
+			color: black;
+			font-size: 600%;
+		}
+		#emoji {
+			margin-top: 15%;
+		}
+	</style>
+</head>
+<body>
+	<center>
+	<h1>Twitter Sentiment Analysis</h1>
+	<hr class="style-seven">
+	<h4>Analyzing Twitter for</h4>
+	<h1 id="phrase"><%= monitoringPhrase %></h1>
+	<br>
+	<div class="container">
+		<div class="row">
+	    	<div class="col">
+	      		<h5>Number of Tweets Analysed</h5>
+	      		<div id="score">
+	      			<%= tweetCount %>
+	      		</div>
+	    	</div>
+	    	<div class="col">
+	      		<h5>Average Tweeter's Reaction</h5>
+	      		<div id="emoji">
+	      			<% if (avg > 0.5) { %>
+	      				<img src="./Smliing.png">
+	      			<% } else if (avg < 0.5) { %>
+	      				<img src="./Angry.png">
+	      			<% } else { %>
+	      				<img src="./Neutral.png">
+	      			<% } %>
+	      		</div>
+	    	</div>
+	  	</div>
+	  	<br>
+	  	<a style="color: black;" class="btn btn-light btn-lg" href="/refresh">Make A New Analysis</a>
+	</div>
+	</center>
+</body>
+</html>
